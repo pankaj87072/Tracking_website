@@ -1,50 +1,56 @@
 import React from 'react';
 import Navbar from '../compnents/Navbar';
 import Taskadminpanel from '../compnents/Taskadminpanel';
-import { useState } from 'react';
-import { FaBars } from 'react-icons/fa'; // Import hamburger icon from react-icons
+// import { useState } from 'react';
+// import { FaBars } from 'react-icons/fa'; // Import hamburger icon from react-icons
+import Sidebars from '../compnents/Sidebars';
+import { FaSearch } from 'react-icons/fa';
+import { Button } from '@mui/material';
+import { Link, Outlet } from 'react-router-dom';
+
+// import { Link } from 'react-router-dom';
 
 
 const ProjectTask = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <div className={`maincontainer h-screen ${isMenuOpen ? 'menu-open' : ''}`}>
-      <Navbar />
-      <div className='bg-gray-100 h-[85%] flex flex-row'>
-        <div className={`Sidebar mt-1 border rounded-md ${isMenuOpen ? 'menu-open' : ''} w-${isMenuOpen?'[18%]' : '[1%]'}`} style={{ transition: 'width 0.5s ease-in-out' }}>
-          <div className={`hamburger w-full h-6` }onClick={toggleMenu}>
-            <FaBars />
-          </div>
-          {isMenuOpen && (
-            <div className='menu-items'>
-              <div>Dashboard</div>
-              <div>
-                Projects
-                <ul>
-                  <li>Active</li>
-                  <li>Previous</li>
-                </ul>
-              </div>
-              <div>Settings</div>
+    <div className={`maincontainer h-full`}>
+      <Navbar pageTitle={"Project Task"} />
+      <div className='h-full flex flex-row'>
+        <div className='h-screen'>
+          <Sidebars />
+        </div>
+        <div className='flex flex-col w-[90%] m-2'>
+          <div className='ml-4 mb-6 flex flex-row justify-between '>
+            <div className='border rounded-md ml-6 h-18 flex items-center'>
+              <FaSearch className='ml-2 text-gray-500' />
+              <input
+                type='text'
+                placeholder={`Search`}
+                className='m-1 ml-2 align-middle border-none outline-none'
+              />
             </div>
-          )}
+              <Button variant="contained" color="primary" className='mr-6 m-1 p-1 w-20 h-10 '>
+                Create
+              </Button>
+          </div>
+          <div className={`flex flex-row flex-wrap`}>
+            {/* Assuming Taskadminpanel represents tasks in a project */}
+           <Link to='/project/1'><Taskadminpanel /></Link> 
+            <Taskadminpanel />
+            <Taskadminpanel />
+            <Taskadminpanel />
+            <Taskadminpanel />
+            <Taskadminpanel />
+            <Taskadminpanel />
+            <Taskadminpanel />
+          </div>
         </div>
-        <div className={`w-${isMenuOpen ? '18' : '10'}% flex flex-row flex-wrap`}>
-          <Taskadminpanel />
-          <Taskadminpanel />
-          <Taskadminpanel />
-          <Taskadminpanel />
-          <Taskadminpanel />
-          <Taskadminpanel />
-        </div>
-      </div>
+      </div> 
+      <Outlet/>
     </div>
+   
   );
+  
 };
 
 export default ProjectTask;

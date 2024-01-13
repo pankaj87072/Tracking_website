@@ -1,6 +1,7 @@
 import { Divider, Avatar, LinearProgress } from '@mui/material';
 import React from 'react';
 import '../compnents/cssfile.css'
+// import { Link } from 'react-router-dom';
 
 const Taskadminpanel = () => {
   const totalDaysAssigned = 30;
@@ -21,10 +22,10 @@ const Taskadminpanel = () => {
   const completionPercentage = ((totalTasks - tasksLeft) / totalTasks) * 100;
 
   return (
-    <div className='projectcontainer ml-10 mt-2 w-80 h-64 border rounded-md border-violet-200 border-solid custom-container'>
-      <div className='projectname h-1/6 w-full m-2 text-xl font-bold text-gray-800'>
+    <div className='projectcontainer ml-10 mt-2 w-[17rem] h-[18rem] border rounded-md border-violet-200 border-solid custom-container overflow-hidden'>
+  <div className='projectname h-1/6 w-full m-2 text-xl font-bold text-gray-800'>
         Project: Amazing Project Name
-      </div>
+      </div>  
       <Divider />
       <div className='project-desc h-2/5 w-full flex'>
         <div className='flex flex-col items-center w-1/2'>

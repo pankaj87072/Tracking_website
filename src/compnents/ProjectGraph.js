@@ -13,7 +13,7 @@ const ProjectGraph = () => {
   ];
 
   return (
-    <div className='border border-gray-200 rounded-md bg-white w-3/4 h-fit m-2 '>
+    <div className='border border-gray-200 rounded-md bg-white w-full h-fit m-2 shadow-md'>
       <div className='m-2'>Project Completion</div>
       <Divider />
       <div className='graph h-64'>

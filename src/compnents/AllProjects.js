@@ -4,7 +4,7 @@ import Dropdown from './Dropdown';
 
 const AllProjects = () => {
   return (
-    <div className='maincontainer border border-gray-200 rounded-md h-80 w-4/5 m-2 bg-white '>
+    <div className='maincontainer border border-gray-200 rounded-md h-80 w-11/12 m-2 bg-white shadow-md'>
       <div className='heading font-bold from-neutral-100 font-serif m-3'>All Projects</div>
       <Divider />
       <div className='show-and-search flex flex-row justify-between items-center h-13'>
